@@ -1,0 +1,145 @@
+header {
+    position: relative;
+
+    .navbar {
+        @include setContainer($max-width-1, auto);
+        
+        background-color: $color-trans;
+        // background-image: url('http://tabula.bold-themes.com/wavy/wp-content/uploads/sites/3/2019/04/yellow_top_wave_01.png');
+        //width: $max-width;
+        .navbar-brand { // Adjust logo
+            img {
+                height: 80px;
+                width: 80px;
+            }
+    
+        };
+        .nav-item { // Format items on navbar
+            a {
+                @include styleText($fs-1,$fw-3, $color-dark-1);
+                margin-right: 30px;
+                line-height: $lh-1;
+                transition: all 0.2s;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    bottom: -4px;
+                    margin-left: 15px;
+                    height: 12px;
+                    width: 12px;
+                    border-radius: 50%;
+                    background-color: $color-purple-1;
+                    transform: scale(0);
+                    
+                };
+
+                &:hover { // Hover options
+                    @include styleText($fs-1, $fw-3, $color-purple-1);
+                    &::after {
+                        transform: scale(1);
+                    };
+                };
+            };
+        };
+
+        .active {
+            a {
+                &::after {
+                    content: '';
+                    transform: scale(.8);
+                };
+            };
+        };
+
+        .nav__contact { // Format the contacts, not a bs4 class
+            display: flex;
+            align-items: center;
+            .nav-link { // Format icons
+                // line-height: $lh-1;
+                @include setContactIcon($fs-1, $fw-1, $color-dark-1, 0, 0, 1);
+                transition: all 0.2s;
+                &:hover {
+                    @include setContactIcon($fs-1, $fw-1, $color-purple-1, 0, 0, 1);
+                    cursor: pointer;
+                };
+            };
+        };
+
+        .navbar-toggler-icon{
+            @include styleText($fs-8, $fw-1, $color-dark-1);
+            line-height: $lh-2;
+            height: 48px;
+            width: max-content;
+            overflow: hidden;
+            display: none;
+            i {
+                transition: all 0.2s;
+            }
+            i:hover {
+                color: $color-purple-1;
+                transform: scale(1.2);
+            };
+        };
+
+
+    };
+    .navbar__onscroll {
+        height: 54px;
+        #logo__img {
+            // visibility: hidden;
+            display: none;
+        };
+        .nav-item {
+            a:after {
+                bottom: -16px;
+            };
+        };
+    };
+    .fixed-top {
+        max-width: 100%;
+        background-color: $color-white-3;
+    };
+    #logo__big {
+        display: none;
+        transition: display 1s;
+        width: 90px;
+        height: 90px;
+        margin: auto;
+    };
+
+};
+
+
+// responsive
+@include responsive('extra-large'){
+    header {
+        .navbar {
+            justify-content: flex-start;
+            .navbar-brand { // Adjust logo
+                img {
+                    height: 48px;
+                    width: 48px;
+                };
+                
+            };
+            .navbar-toggler-icon {
+                display: block;
+            };
+            .nav-item {
+                a {
+                    margin: 10px 0px;
+                }
+                a:after {
+                    display: none;
+                };
+            };
+            .nav__contact {
+                .nav-link {
+                    padding: 0 5px;
+                }
+            };
+        };
+    };
+};

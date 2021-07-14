@@ -1,0 +1,27 @@
+body {
+    header, section, footer {
+        transition: margin 0.5s;
+    }
+    .container-lg, .container-xl, .container-md, .container-sm, .container {
+        @include setContainer($max-width-1, auto);
+    };
+};
+.content-with-sidebar {
+    transition: all 0.5s;
+    margin-left: 0px;
+};
+@include responsive('extra-large') {
+    .content-with-sidebar {
+        margin-left: 200px!important;
+    };
+    #navbarSupportedContent {
+        position: fixed;
+        top: 0px;
+        height: 100%;
+        background-color: $color-white-3;
+        z-index: 999;
+        left: -200px;
+        width: 200px;
+        transition: all 0.5s;
+    };
+};

@@ -1,0 +1,63 @@
+footer {
+    // background-color: $color-purple-1;
+    background-image: url('http://tabula.bold-themes.com/wavy/wp-content/uploads/sites/3/2019/03/footer_background.jpg');
+    padding: $pd-8;
+    h4 {
+        @include styleText($fs-7, $fw-3, $color-white-3);
+    }
+    .footer__contact {
+        .contact__items {
+            // list-style: none;
+            @include styleText($fs-1, $fw-2, $color-white-3);
+            padding: $pd-6 0;
+            i {
+                padding-right: $pd-1;
+            }
+        };
+        .footer__icons {
+            padding: $pd-5 0;
+            i {
+                @include setContactIcon($fs-1, $fw-2, $color-white-3, 0, 0, 1);
+                transition: all 0.2s;
+                &:hover {
+                    @include setContactIcon($fs-1, $fw-2, $color-dark-1, 0, 0, 1);
+                    cursor: pointer;
+                };
+            };
+        };
+    };
+    ul {
+        li {
+            color: $color-yellow-1;
+            padding: $pd-9 0px;
+            border-bottom: 1px solid rgba(0,0,0,.1);
+            a {
+                &:link, &:visited, &:hover, &:active {
+                    @include styleText($fs-1, $fw-2, $color-white-3);
+                };
+                &:hover {
+                    opacity: .8;
+                };
+            };
+        };
+    };
+    form {
+        
+        .form__control {
+            width: 100%;
+            text-align: center;
+            border-radius: $br-1;
+            border: 1px solid rgba(255,255,255,.1);
+            line-height: $lh-1;
+            padding: $pd-1;
+            background-color: $color-trans;
+            color: $color-white-3;
+            &:focus{
+                border-color: $color-white-3;
+            };
+            &::placeholder{
+                color: $color-white-3;
+            };
+        };
+    }
+};

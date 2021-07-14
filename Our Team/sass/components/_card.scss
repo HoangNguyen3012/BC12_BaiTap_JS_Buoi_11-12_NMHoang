@@ -1,0 +1,44 @@
+.card { // BS4 item
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 270px;
+    margin: auto;
+    transition: all 0.5s;
+    text-align: center;
+    .card-img-top {
+        max-width: $max-width-2;
+        overflow: hidden;
+        img {
+            max-width: $max-width-2;
+            transform: scale(1);
+            transition: all 0.8s;
+            &:hover {
+                transform: scale(1.06);
+            };
+        };
+    };
+
+    .card-title {
+        @include styleText(2.5rem, $fw-3, $color-dark-1);
+    };
+
+    .card-body { // courses layout
+        span {
+            @include styleText($fs-1, $fw-3, $color-purple-1);
+        };
+        h3 {
+            @include styleText(auto, $fw-3, $color-dark-1);
+        };
+        p {
+            @include styleText(auto, $fw-2, $color-dark-1);
+        };
+    };
+
+    &:hover {
+        box-shadow: 0 30px 30px -10px rgba(0, 0, 0, 0.2);
+    };
+
+    @include responsive('large'){
+        max-width: 100%;
+    };
+};

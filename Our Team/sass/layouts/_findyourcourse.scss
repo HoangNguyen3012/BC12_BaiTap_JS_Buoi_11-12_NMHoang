@@ -1,0 +1,7 @@
+.findyourcourse {
+    padding-top: $pd-7;
+    margin-bottom: $mg-4; // Cover the overlay image
+    .imgcover__container {
+        bottom: -$mg-4;  // Cover the overlay image
+    }
+};

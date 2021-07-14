@@ -1,0 +1,39 @@
+.fancy-toggle-icon {
+            border: none;
+            width: 63px;
+            background-color: $color-dark-1;
+            box-shadow: -6.5px -1px 0 14px $color-white-3 inset;
+            transition: background-color 0.5s;
+            &::before{
+                @include navbarIcon(24px, $color-dark-1);
+            };
+            &::after{
+                @include navbarIcon(46px, $color-dark-1);
+            };
+
+            &:hover{
+                background-color: $color-purple-1;
+                &::before {
+                    @include navbarIcon(22px, $color-purple-1);
+                };
+                &::after {
+                    @include navbarIcon(48px, $color-purple-1);
+                }
+            }
+}
+.btn__form-send {
+    @include styleButtonForm($color-white-3, $color-purple-1, 0, 50px, $color-purple-1);
+};
+
+.btn__form-send-reversed {
+    @include styleButtonForm($color-purple-1, $color-white-3, 0, 50px, $color-white-3);
+};
+
+#btnHideSideBar {
+    display: none;
+    @include styleText($fs-7, $fw-2, $color-dark-1);
+    
+    &:hover {
+        @include styleButtonHover($color-purple-1, $color-trans, $color-trans);
+    };
+};

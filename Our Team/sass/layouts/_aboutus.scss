@@ -1,0 +1,51 @@
+.about__us {
+
+    padding-bottom: $pd-7;
+    .container-lg {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        // background: url('http://tabula.bold-themes.com/wavy/wp-content/uploads/sites/3/2019/04/Violet_top_left_wave.png');
+        // background-size: cover;
+    
+        .txt_aboutUs {
+            max-width: 600px;
+            padding: 0 $pd-3; // for extra large screen
+            span {
+                @include styleText($fs-2, $fw-3, $color-purple-1);
+                margin-bottom: $mg-5;
+            };
+            h1 {
+                @include styleText($fs-6, $fw-3, $color-dark-1);
+            };
+        };
+    };
+
+};
+
+
+
+
+
+// responsive
+@include responsive('large'){
+    .about__us {
+        .container-lg {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0 $pd-4; // for large screen
+            .txt_aboutUs {
+                max-width: $max-width-2;
+                padding: 0px;
+                span {
+                    @include styleText($fs-4, $fw-2, $color-purple-1);
+                };
+                h1 {
+                    @include styleText($fs-5, $fw-3, $color-dark-1);
+                };
+            };
+        };
+    };
+    
+};

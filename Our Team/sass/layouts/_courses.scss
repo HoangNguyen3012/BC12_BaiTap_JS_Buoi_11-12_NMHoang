@@ -1,0 +1,15 @@
+.courses {
+    background-color: $color-purple-2;
+    display: flex;
+    .container-lg {
+        @include setContainer($max-width-1, auto);
+        z-index: 3;
+    };
+};
+
+// Responsive
+@include responsive('large'){
+    .courses {
+        padding: 0 $pd-4; // for large screen
+    };
+};

@@ -1,0 +1,38 @@
+.form__card{
+    padding: 0 $pd-5;
+    border: 1px solid $color-trans;
+    border-radius: $br-1;
+    box-shadow: 0 30px 30px -10px rgba(0, 0, 0, 0.2);
+    @include setContainer($max-width-3, auto);
+    h1, h2, h3, h4 {
+        text-align: center;
+        margin: $mg-1 0px;
+    };
+
+    .input__group{
+        // border-radius: 20px;
+        // display: block;
+        position: relative;
+        margin: $mg-2 0px;
+        input:not(:first-child), select:not(:first-child), textarea:not(:first-child) { // with icon in front
+            border-radius: $br-1;
+            padding-left: 42px;
+            text-align: left;
+        };
+        textarea:not(:first-child) {
+            height: 90px;
+            resize: vertical;
+        }
+        i {
+            position: absolute;
+            z-index: 5;
+            top: 9.25px;
+            left: 24px;
+            color: $color-purple-1;
+        };
+    };
+
+    @include responsive('large'){
+        max-width: 100%;
+    }
+};

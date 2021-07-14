@@ -1,0 +1,27 @@
+// Import file scss in order
+// helpers
+@import './helpers/variabes';
+@import './helpers/mixin';
+
+// vendors
+
+// base -> reset.scss
+@import './base/reset';
+@import './base/customize';
+
+// components
+@import './components/button';
+@import './components/card';
+@import './components/img';
+@import './components/form';
+
+// layouts
+@import './layouts/header';
+@import './layouts/aboutus';
+@import './layouts/courses';
+@import './layouts/findyourcourse';
+@import './layouts/footer';
+
+// pages
+
+// themes

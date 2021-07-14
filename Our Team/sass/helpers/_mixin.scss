@@ -1,0 +1,77 @@
+@mixin styleText($fs, $fw, $color) {
+    font-size: $fs;
+    font-weight: $fw;
+    color: $color;
+};
+
+@mixin styleButton($color, $bg, $py, $px, $bd, $bd-radius) {
+    color: $color;
+    background: $bg;
+    padding: $py $px;
+    border: $bd;
+    border-radius: $bd-radius;
+
+};
+
+@mixin styleButtonHover($color, $bg, $bd-color) {
+    background: $bg;
+    border-color: $bd-color;
+    color: $color;
+};
+
+@mixin styleButtonForm($color, $bg, $bd, $bd-radius, $bd-color) {
+        // button appearance
+        width: max-content;
+        margin: $mg-6 $mg-7;
+        @include styleButton($color, $bg, $pd-1, $pd-2, 0, 50px);
+        @include styleText($fs-1, $fw-3, $color);
+        letter-spacing: $ls-2; //1px;
+        box-shadow: 0 0 0 3em $bg inset;
+    
+        transition: all 0.5s;
+        &:hover { // hovering on button
+            @include styleButtonHover($bg, $color, $bd-color);
+            box-shadow: 0 0 0 1px $bg inset;
+        };
+};
+
+@mixin responsive($screen) {
+    @if (map-has-key($map: $breakpoints, $key: $screen)) {
+        $value: map-get($map: $breakpoints, $key: $screen);
+        @media screen and (max-width: $value){
+            @content;
+        }
+    } @else {
+        @error 'screen does not exist!'
+    }
+};
+
+@mixin setContactIcon($fs, $fw, $color, $top, $left, $scale) {
+    @include styleText($fs, $fw, $color);
+    top: $top;
+    left: $left;
+    transform: scale($scale);
+};
+
+@mixin navbarIcon($top, $color) {
+    content: '';
+    border: solid $color 1px;
+    position: absolute;
+    left: 36px;
+    top: $top;
+    transform: scale(1);
+    height: 1px;
+    width: 36px;
+    transition: all 0.5s;
+};
+
+@mixin setContainer($max-width, $margin) {
+    max-width: $max-width;
+    margin: auto;
+};
+
+@mixin setIconPositionInForm($top, $left) {
+    position: absolute;
+    top: $top;
+    left: $left;
+};

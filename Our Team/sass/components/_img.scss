@@ -1,0 +1,16 @@
+.imgcover__container {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+
+    img {
+        max-width: $max-width-2;
+        height: auto;
+        
+    };
+};
+
+.section__imgcover__container {
+    position: relative;
+    height: max-content;
+};
